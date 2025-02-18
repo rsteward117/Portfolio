@@ -1,0 +1,74 @@
+:root {
+  --primary-color: #333;
+  --accent-color: #0077cc;
+  --bg-color: #fff;
+  --text-color: #444;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+.about {
+  padding: 5rem 4rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 10px 15px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.text-card{
+  background: #fff;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-image {
+  position: relative;
+  display: inline-block;
+}
+
+.about-image img {
+  width: 250px;         /* Fixed size for a balanced layout */
+  height: 250px;
+  border-radius: 10%; 
+  box-shadow: var(--shadow);
+  transition: transform var(--transition-speed);
+  position: relative;
+  z-index: 2;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+
