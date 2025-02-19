@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { motion, LayoutGroup } from 'framer-motion';
 import '../styles/navbar.css';
+import MobileNav from "./moblieNav"
 import FadeSection from './fadeSection';
 import myLogo from '../assets/logo.png';
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = useState("hero");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
 
   return (
     <nav className="navbar">
@@ -14,6 +20,15 @@ const Navbar = () => {
         <div className="logo">
           <img src={myLogo} alt="My Logo" />
         </div>
+
+        <div className="hamburger" onClick={toggleMenu}>
+          <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
+          <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
+          <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
+        </div>
+
+        <MobileNav isOpen={menuOpen} onClose={closeMenu} />
+
         <LayoutGroup>
           <ul className="nav-links">
             <li 
@@ -43,7 +58,7 @@ const Navbar = () => {
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={-40}
+                offset={-140}
                 duration={500}
                 onClick={() => setActiveNav("about")}
               >

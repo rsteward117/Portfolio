@@ -1,6 +1,6 @@
 import React from 'react';
 import FadeSection from './fadeSection';
-import Skills from './Skills';
+import Skills from './skills';
 import profilePic from '../assets/my_photo.png';
 import '../styles/about.css';
 
